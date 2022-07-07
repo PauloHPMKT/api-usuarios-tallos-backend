@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import {
-  Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+  Controller, Get, Post, Patch, Param, Delete, Body } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -27,13 +27,15 @@ export class UserController {
     return this.userService.findByEmail(email);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return this.userService.update(+id, updateUserDto);
+  //update user
+  @Patch(':email')
+  update(@Param('email') email: string, @Body() updateUser: UpdateUserDto) {
+    return this.userService.update(email, updateUser);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.userService.remove(+id);
+  //delete user
+  @Delete(':email')
+  remove(@Param('email') email: string) {
+    return this.userService.remove(email);
   }
 }
