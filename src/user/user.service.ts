@@ -18,12 +18,12 @@ export class UserService {
   }
 
   //list all users
-  findAll() {
-    return `This action returns all user`;
+  async findAll() {
+    return await this.userModel.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+  async findByEmail(email: string) {
+    return await this.userModel.findOne({ email });
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {

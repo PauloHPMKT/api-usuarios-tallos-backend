@@ -16,14 +16,15 @@ export class UserController {
   }
 
   //list all users
-  @Get()
+  @Get('listusers')
   findAll() {
     return this.userService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.userService.findOne(+id);
+  //list one user
+  @Get(':email')
+  findOne(@Param('email') email: string) {
+    return this.userService.findByEmail(email);
   }
 
   @Patch(':id')
