@@ -1,6 +1,5 @@
 /* eslint-disable prettier/prettier */
-import {
-  Controller, Get, Post, Patch, Param, Delete, Body } from '@nestjs/common';
+import { Controller, Get, Post, Patch, Param, Delete, Body } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
