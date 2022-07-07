@@ -11,10 +11,13 @@ export class UserService {
     private readonly userModel: Model<CreateUserDto>,
   ) {}
 
-  create(createUser: CreateUserDto) {
-    return 'This action adds a new user';
+  //create user
+  async create(createUser: CreateUserDto) {
+    const newUser = await new this.userModel(createUser);
+    return newUser.save();
   }
 
+  //list all users
   findAll() {
     return `This action returns all user`;
   }
