@@ -5,7 +5,7 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost:27017/nest-database'),
+    MongooseModule.forRoot(process.env.DB_STRING_CONNECTION),
     UserModule,
     AuthModule,
   ],
