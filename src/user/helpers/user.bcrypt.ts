@@ -5,4 +5,8 @@ export class Encrypt {
     const salt = await bcrypt.genSalt();
     return await bcrypt.hash(pass, salt);
   }
+
+  static async ComparePass(enterPass: string, userPass: string) {
+    return await bcrypt.compare(enterPass, userPass);
+  }
 }
