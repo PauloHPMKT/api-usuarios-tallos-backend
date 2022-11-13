@@ -1,8 +1,8 @@
 export interface UserPayload {
-  sub: number;
+  sub: string;
   name: string;
   email: string;
-  rules: string;
+  //roles: string;
   iat?: number; // é acessável do payload
   exp?: number;
 }

@@ -1,4 +1,5 @@
 export class CreateUserDto {
+  _id?: string;
   cod_user: number;
   name: string;
   email: string;
@@ -21,4 +22,5 @@ export class CreateUserDto {
   dept: string;
   corporative_email: string;
   atuation_area: string;
+  private _doc: any;
 }

@@ -1,6 +1,6 @@
 export interface UserFromJwt {
-  id: number;
+  id: string;
   email: string;
   name: string;
-  rules: string;
+  //roles: string;
 }
